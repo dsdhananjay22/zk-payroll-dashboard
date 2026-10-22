@@ -15,14 +15,7 @@ import Link from "next/link";
 // Known batch references for duplicate guidance — demo uses mock run ids plus example refs
 const KNOWN_BATCH_REFERENCES = [...MOCK_PAYROLL_RUNS.map((r) => r.id), "BATCH-2025-001", "payroll_q1_2025"];
 
-/**
- * Payroll operator permission model.
- *
- * The dashboard must validate that the current operator holds the
- * `create:payroll` permission before allowing a draft batch to be
- * created. This is a privacy-aware gate: we only expose the operator's
- * role label and the missing permission, never salary or amount data.
- */
+
 export type PayrollPermission = "create:payroll" | "view:payroll" | "approve:payroll";
 
 export type PayrollOperatorRole = "admin" | "operator" | "viewer" | "guest";
